@@ -253,7 +253,14 @@
         <div class="thin-line"></div>
         <form action="get">
           <input type="text" placeholder="Full Name">
-          <input type="text" placeholder="Women's Haircut and Styling" >
+          <input type="text" placeholder="How may we serve you?" list="services" name="services" id="services">
+          <datalist id="services">
+            <option value="Hair cut"></option>
+            <option value="Hair coloring"></option>
+            <option value="Hair spa"></option>
+            <option value="Makeup"></option>
+            <option value="Eyelash extension"></option>
+          </datalist>
           <input type="datetime" name="time" id="time" placeholder="Pick a time">
         </form>
         <a href="#" class="cta-button">Book Appointment</a>

@@ -13,6 +13,10 @@
   --nature-bronze: #B08D57;  /* Muted bronze */
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   font-size: 15px;
@@ -689,6 +693,10 @@ footer h1{
   padding: 15px 12px;
 }
 
+#log, .ham, #cross{
+  display: none;
+}
+
 @media screen and (max-width: 450px){
 
   .container{
@@ -696,7 +704,88 @@ footer h1{
   }
 
   header{
+    position: fixed;
+    padding: 10px 14px;
+    gap: 3rem;
+    background: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .ham{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .bar, .slant{
+    width: 30px;
+    height: 4px;
+    background: var(--luxury-cream);
+    border-radius: 20px;
+  }
+
+  #cross{
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 10px;
+    border: 2px solid var(--luxury-cream);
     display: none;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slant{
+    position: absolute;
+  }
+
+  .slant1{
+    transform: rotate(45deg);
+  }
+
+  .slant2{
+    transform: rotate(-45deg);
+  }
+
+  #log{
+    display: block;
+  }
+
+  #log img{
+    width: 85px;
+  }
+
+  #option{
+    border-bottom: 2px solid var(--nature-bronze);
+    padding: 25px 0;
+    width: 90%;
+  }
+
+  nav{
+    width: 70%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    transform: translateY(-100%);
+    transition: transform 0.4s ease-in-out;
+  }
+
+  nav ul{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 10px;
+    margin-top: 30px;
+  }
+
+  nav ul img{
+    width: 50px;
+    order: 1;
   }
 
   .hero-text{
@@ -739,7 +828,7 @@ footer h1{
   .hype-text h1{
     font-size: 24px;
     padding: 15px 0 0 15px;
-    width: 410px;
+    width: 350px;
     transform: scale(1.1, 1.3);
   }
 

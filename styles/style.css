@@ -793,6 +793,12 @@ footer h1{
     border-bottom: 2px solid var(--nature-bronze);
   }
 
+  nav a{
+    color: var(--luxury-cream);
+    text-decoration: none;
+    padding: 30px 0;
+  }
+
   nav ul img{
     width: 50px;
     order: 1;

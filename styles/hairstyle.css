@@ -8,5 +8,21 @@
   grid-column: 3/4
 }
 
+.aura{
+  animation: steeze 0.5s both;
+  animation-timeline: view();
+  animation-range: cover 0% 42%;
+}
 
+@keyframes steeze{
+  0%{
+    opacity: 0;
+    transform: scale(0.7);
+  }
+
+  100%{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 

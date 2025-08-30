@@ -104,12 +104,14 @@ nav ul {
   width: 100%;
 }
 
-nav ul li {
+nav ul a {
   font-size: 14px;
   text-transform: capitalize;
+  color: var(--luxury-cream);
+  text-decoration: none;
 }
 
-nav ul li:hover {
+nav ul a:hover {
   color: var(--gold);
 }
 
@@ -770,17 +772,25 @@ footer h1{
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
-    border-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
     transform: translateY(-100%);
     transition: transform 0.4s ease-in-out;
   }
 
   nav ul{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 30px;
     padding: 20px 10px;
     margin-top: 30px;
+  }
+
+  nav li{
+    padding: 30px 0;
+    width: 70%;
+    border-bottom: 2px solid var(--nature-bronze);
   }
 
   nav ul img{

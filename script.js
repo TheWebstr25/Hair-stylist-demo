@@ -17,3 +17,15 @@ document.getElementById("cross").addEventListener("click", function(){
   document.getElementById("ham").style.display = "flex";
 
 });
+
+document.querySelectorAll(".menu-option").forEach(function(link){
+
+  link.addEventListener("click", function(){
+
+    document.getElementById("ham").style.display = "flex";
+
+    document.getElementById("nav").style.transform = "translateY(-100%)";
+
+    document.getElementById("cross").style.display = "none";
+  })
+})

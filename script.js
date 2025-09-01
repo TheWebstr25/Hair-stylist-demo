@@ -1,31 +1,51 @@
-document.getElementById("ham").addEventListener("click", function(){
+const mediaQuery = window.matchMedia("(max-width: 450px)");
 
+function openMenu() {
   document.getElementById("nav").style.transform = "translateY(0)";
-
-  document.getElementById("cross").style.display = "flex";
-
   document.getElementById("ham").style.display = "none";
+  document.getElementById("cross").style.display = "flex";
+}
 
-});
-
-document.getElementById("cross").addEventListener("click", function(){
-
+function closeMenu() {
   document.getElementById("nav").style.transform = "translateY(-100%)";
-
   document.getElementById("cross").style.display = "none";
-
   document.getElementById("ham").style.display = "flex";
+}
 
-});
+function closeMenuFromLink() {
+  document.getElementById("nav").style.transform = "translateY(-100%)";
+  document.getElementById("cross").style.display = "none";
+  document.getElementById("ham").style.display = "flex";
+}
 
-document.querySelectorAll(".menu-option").forEach(function(link){
+function setUpMenu(e) {
+  const hamburger = document.getElementById("ham");
+  const xBtn = document.getElementById("cross");
+  const navLinks = document.querySelectorAll(".menu-option");
 
-  link.addEventListener("click", function(){
+  if (e.matches) {
+    // Mobile view
+    hamburger.style.display = "flex";
+    xBtn.style.display = "none";
 
-    document.getElementById("ham").style.display = "flex";
+    hamburger.addEventListener("click", openMenu);
+    xBtn.addEventListener("click", closeMenu);
 
-    document.getElementById("nav").style.transform = "translateY(-100%)";
+    navLinks.forEach(function(link) {
+      link.addEventListener("click", closeMenuFromLink);
+    });
+  } else {
+    // Desktop view
+    hamburger.style.display = "none";
+    xBtn.style.display = "none";
+    // document.getElementById("nav").style.transform = "translateY0)";
+  }
+}
 
-    document.getElementById("cross").style.display = "none";
-  })
-})
+// Initial setup
+setUpMenu(mediaQuery);
+
+// Listen for screen size changes
+mediaQuery.addEventListener("change", setUpMenu);
+
+   
